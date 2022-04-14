@@ -13,8 +13,9 @@ export default class Field {
                 this.field[i] = [];
             }
             for (let j = 0; j < height; j++) {
+                console.log("a");
                 this.field[i][j] = new Position;
-                this.field[i][j].gem = new Gem(new Sprite("../Sprites/Gems.png", i * pixelsPerUnit, 0, 16, 16, pixelsPerUnit, pixelsPerUnit), this.transform.x + i * pixelsPerUnit, this.transform.y + j * pixelsPerUnit);
+                this.field[i][j].gem = new Gem(new Sprite("../Sprites/Gems.png", i * 16, 0, 16, 16, pixelsPerUnit, pixelsPerUnit), this.transform.x + i * pixelsPerUnit, this.transform.y + j * pixelsPerUnit);
             }
         }
 

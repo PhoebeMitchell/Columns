@@ -13,16 +13,13 @@ export default class Sprite {
 
     Draw(context, dX, dY) {
         if (!this.image.complete) {
-            console.log(dY, "a");
             this.image.onload = () => this.DrawOnLoad(context, dX, dY);
             return;
         }
-        console.log(dY, "b");
         this.DrawOnLoad(context, dX, dY);
     }
 
     DrawOnLoad(context, dX, dY) {
-        console.log(dY, "c");
         context.drawImage(this.image, this.sX, this.sY, this.sWidth, this.sHeight, dX, dY, this.dWidth, this.dHeight);
     }
 }

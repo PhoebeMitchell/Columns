@@ -26,11 +26,9 @@ export default class Field {
         this.height = height;
 
         this.column = new Column(this.transform, 0, 0, 0);
-        
     }
 
     Draw(context) {
-        this.column.Draw(context);
         context.fillRect(this.transform.x, this.transform.y, this.width * this.pixelsPerUnit, this.height * this.pixelsPerUnit);
         this.DrawGrid(context);
         for (let i = 0; i < this.width; i++) {
@@ -38,6 +36,7 @@ export default class Field {
                 this.field[i][j].Draw(context);
             }
         }
+        this.column.Draw(context);
     }
 
     DrawGrid(context) {

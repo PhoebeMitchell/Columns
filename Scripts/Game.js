@@ -1,9 +1,15 @@
 import Field from "./Field.js"
+import Time from "./Time.js"
 
 var canvas = document.getElementById("game");
 var context = canvas.getContext("2d");
 var field = new Field(6, 13, 48, 100, 50);
-field.Draw(context);
+var time = new Time;
 
-var image = new Image;
-image.src = "../Sprites/Gems.png"
+Game();
+function Game() {
+    time.UpdateTime();
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    field.Draw(context);
+    requestAnimationFrame(Game);
+}

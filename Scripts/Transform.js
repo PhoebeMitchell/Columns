@@ -1,6 +1,19 @@
 export default class Transform {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
+    constructor(parent) {
+        this.parent = parent;
+        if (parent != undefined) {
+            parent.children.push(this);
+        }
+        this.children = [];
+        this.x = 0;
+        this.y = 0;
+    }
+
+    X() {
+        return this.parent != undefined ? this.parent.X() + this.x : this.x;
+    }
+
+    Y() {
+        return this.parent != undefined ? this.parent.Y() + this.y : this.y;
     }
 }

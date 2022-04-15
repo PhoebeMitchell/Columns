@@ -1,5 +1,7 @@
 export default class Position {
     Draw(context) {
-        this.gem.Draw(context)
+        if (this.gem != undefined) {
+            this.gem.Draw(context)
+        }
     }
 }
